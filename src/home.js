@@ -1,6 +1,6 @@
 export default function createHome() {
     const content = document.createElement('div');
-    content.classList.add('content-container');
+    content.classList.add('home-container');
 
     // Content one
     const contentOne = document.createElement('p');

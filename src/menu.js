@@ -1,6 +1,6 @@
 export default function createMenu() {
     const content = document.createElement('div');
-    content.classList.add('content-container');
+    content.classList.add('menu-container');
 
     const ribeye = document.createElement('div');
     const ribeyeHeader = document.createElement('h3');

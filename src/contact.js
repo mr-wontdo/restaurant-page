@@ -1,6 +1,6 @@
 export default function createContact() {
     const content = document.createElement('div');
-    content.classList.add('content-container');
+    content.classList.add('contact-container');
 
     const phoneNumber = document.createElement('p');
     phoneNumber.textContent = '(515) 555-5555';
