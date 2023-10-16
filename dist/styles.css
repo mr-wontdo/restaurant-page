@@ -33,22 +33,25 @@ header {
     height: 200px;
 }
 
-.navbar {
-    display: flex;
-}
-
 .name {
     font-family: 'Tangerine', cursive;
     font-size: 6rem;
 }
 
-.home,
-.menu,
-.contact {
+.navbar {
+    display: flex;
+}
+
+.navbar li {
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
     width: 124px;
+}
+
+.navbar .active {
+    text-decoration: underline;
+    text-underline-offset: 12px;
 }
 
 /* Footer */
