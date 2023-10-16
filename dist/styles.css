@@ -58,6 +58,7 @@ footer {
     justify-content: center;
     gap: 6px;
     height: 48px;
+    min-width: max-content;
 }
 
 /* Content */
@@ -81,7 +82,6 @@ footer {
     align-items: center;
     gap: 24px;
     padding: 32px 64px;
-    min-width: max-content;
 }
 
 .home-container > p {
@@ -131,11 +131,16 @@ footer {
     font-size: 1.25rem;
 }
 
+/* Contact */
+.contact-container {
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 64px;
+}
 
-
-
-
-
-* {
-    /* border: 1px solid white; */
+.contact-container > img {
+    height: auto;
+    width: 500px;
 }
