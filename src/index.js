@@ -6,21 +6,24 @@ createHome();
 
 const updateDOM = (() => {
     const content = document.querySelector('#content');
+    const tabs = document.querySelectorAll('li');
     
     const clearContent = () => {
         content.textContent = '';
     };
 
-    document.querySelector('.home').addEventListener('click', () => {
-        clearContent();
-        createHome();
-    });
-    document.querySelector('.menu').addEventListener('click', () => {
-        clearContent();
-        createMenu();
-    });
-    document.querySelector('.contact').addEventListener('click', () => {
-        clearContent();
-        createContact();
+    const clearTabActiveStatus = () => {
+        tabs.forEach(tab => tab.classList.remove('active'));
+    }
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', (e) => {
+            clearContent();
+            if (e.srcElement.className.includes('home')) createHome();
+            if (e.srcElement.className.includes('menu')) createMenu();
+            if (e.srcElement.className.includes('contact')) createContact();
+            clearTabActiveStatus();
+            e.target.classList.add('active');
+        })
     });
 })();
