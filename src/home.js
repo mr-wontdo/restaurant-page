@@ -7,12 +7,18 @@ export default function createHome() {
     contentOne.textContent = 'The steaks have never been higher.'
 
     // Content two
-    const contentTwo = document.createElement('div');
+    const contentTwo = document.createElement('p');
+    contentTwo.textContent = 'Order online or visit us!';
+
+    // Content three
+    const contentThree = document.createElement('div');
 
     const hoursHeader = document.createElement('h3');
     hoursHeader.textContent = 'Hours'
 
     const hoursContainer = document.createElement('div');
+    hoursContainer.classList.add('hours-container');
+
     const sunday = document.createElement('p');
     sunday.textContent = 'Sunday: 8AM - 10PM';
     const monday = document.createElement('p');
@@ -28,18 +34,14 @@ export default function createHome() {
     const saturday = document.createElement('p');
     saturday.textContent = 'Saturday: 8AM - 10PM';
 
-    // Content three
-    const contentThree = document.createElement('p');
-    contentThree.textContent = 'Order online or visit us!';
-
     // Append
     document.querySelector('#content').appendChild(content);
     content.appendChild(contentOne);
     content.appendChild(contentTwo);
     content.appendChild(contentThree);
 
-    contentTwo.appendChild(hoursHeader);
-    contentTwo.appendChild(hoursContainer);
+    contentThree.appendChild(hoursHeader);
+    contentThree.appendChild(hoursContainer);
     hoursContainer.appendChild(sunday);
     hoursContainer.appendChild(monday);
     hoursContainer.appendChild(tuesday);
@@ -47,5 +49,4 @@ export default function createHome() {
     hoursContainer.appendChild(thursday);
     hoursContainer.appendChild(friday);
     hoursContainer.appendChild(saturday);
-
 }
