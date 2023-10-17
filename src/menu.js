@@ -1,47 +1,30 @@
 export default function createMenu() {
     const content = document.createElement('div');
     content.classList.add('menu-container');
-
-    const ribeye = document.createElement('div');
-    const ribeyeHeader = document.createElement('h3');
-    const ribeyeInfo = document.createElement('p');
-    ribeyeHeader.textContent = 'Ribeye';
-    ribeyeInfo.textContent = 'Fatty, tender, and juicy.';
-
-    const newYorkStrip = document.createElement('div');
-    const newYorkStripHeader = document.createElement('h3');
-    const newYorkStripInfo = document.createElement('p');
-    newYorkStripHeader.textContent = 'New York Strip'
-    newYorkStripInfo.textContent = 'A perfect balance between lean and fatty.';
-
-    const filetMignon = document.createElement('div');
-    const filetMignonHeader = document.createElement('h3');
-    const filetMignonInfo = document.createElement('p');
-    filetMignonHeader.textContent = 'Filet Mignon';
-    filetMignonInfo.textContent = 'Lean but extremely tender.';
-
-    const porterHouse = document.createElement('div');
-    const porterHouseHeader = document.createElement('h3');
-    const porterHouseInfo = document.createElement('p');
-    porterHouseHeader.textContent = 'Porterhouse';
-    porterHouseInfo.textContent = 'A combination of the New York strip and filet mignon. Best of both worlds.';
-
-    // Append
     document.querySelector('#content').appendChild(content);
 
-    content.appendChild(ribeye);
-    ribeye.appendChild(ribeyeHeader);
-    ribeye.appendChild(ribeyeInfo);
+    const menuItem = (item, description) => {
+        return {item, description};
+    };
 
-    content.appendChild(newYorkStrip);
-    newYorkStrip.appendChild(newYorkStripHeader);
-    newYorkStrip.appendChild(newYorkStripInfo);
+    const menuItems = [
+        menuItem('Ribeye', 'Fatty, tender, and juicy.'),
+        menuItem('New York Strip', 'A perfect balance between lean and fatty.'),
+        menuItem('Filet Mignon', 'Lean but extremely tender.'),
+        menuItem('Porterhouse','A combination of the New York strip and filet mignon. Best of both worlds.'),
+    ];
 
-    content.appendChild(filetMignon);
-    filetMignon.appendChild(filetMignonHeader);
-    filetMignon.appendChild(filetMignonInfo);
+    const createMenuDOM = ((menuItems) => {
+        menuItems.forEach(menuItem => {
+            const itemDiv = document.createElement('div');
+            const itemHeader = document.createElement('h3');
+            const itemDescription = document.createElement('p');
+            itemHeader.textContent = menuItem.item;
+            itemDescription.textContent = menuItem.description;
 
-    content.appendChild(porterHouse);
-    porterHouse.appendChild(porterHouseHeader);
-    porterHouse.appendChild(porterHouseInfo);
+            content.appendChild(itemDiv);
+            itemDiv.appendChild(itemHeader);
+            itemDiv.appendChild(itemDescription);
+        });
+    })(menuItems);
 }
