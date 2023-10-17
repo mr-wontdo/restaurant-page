@@ -19,20 +19,11 @@ export default function createHome() {
     const hoursContainer = document.createElement('div');
     hoursContainer.classList.add('hours-container');
 
-    const sunday = document.createElement('p');
-    sunday.textContent = 'Sunday: 8AM - 10PM';
-    const monday = document.createElement('p');
-    monday.textContent = 'Monday: 11AM - 8PM';
-    const tuesday = document.createElement('p');
-    tuesday.textContent = 'Tuesday: 11AM - 8PM';
-    const wednesday = document.createElement('p');
-    wednesday.textContent = 'Wednesday: 11AM - 8PM';
-    const thursday = document.createElement('p');
-    thursday.textContent = 'Thursday: 11AM - 8PM';
-    const friday = document.createElement('p');
-    friday.textContent = 'Friday: 8AM - 10PM';
-    const saturday = document.createElement('p');
-    saturday.textContent = 'Saturday: 8AM - 10PM';
+    const createHours = (hours) => {
+        const day = document.createElement('p');
+        day.textContent = hours;
+        return day;
+    }; 
 
     // Append
     document.querySelector('#content').appendChild(content);
@@ -42,11 +33,11 @@ export default function createHome() {
 
     contentThree.appendChild(hoursHeader);
     contentThree.appendChild(hoursContainer);
-    hoursContainer.appendChild(sunday);
-    hoursContainer.appendChild(monday);
-    hoursContainer.appendChild(tuesday);
-    hoursContainer.appendChild(wednesday);
-    hoursContainer.appendChild(thursday);
-    hoursContainer.appendChild(friday);
-    hoursContainer.appendChild(saturday);
+    hoursContainer.appendChild(createHours('Sunday: 8AM - 10PM'));
+    hoursContainer.appendChild(createHours('Monday: 11AM - 8PM'));
+    hoursContainer.appendChild(createHours('Tuesday: 11AM - 8PM'));
+    hoursContainer.appendChild(createHours('Wednesday: 11AM - 8PM'));
+    hoursContainer.appendChild(createHours('Thursday: 11AM - 8PM'));
+    hoursContainer.appendChild(createHours('Friday: 8AM - 10PM'));
+    hoursContainer.appendChild(createHours('Saturday: 8AM - 10PM'));
 }
